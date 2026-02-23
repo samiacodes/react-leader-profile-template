@@ -1,26 +1,39 @@
+import React from "react"
 
-import { useLanguage } from '@/hooks/useLanguage'
+type Props = {
+  value: "en" | "bn"
+  onChange: (val: "en" | "bn") => void
+}
 
-const LanguageToggle = () => {
-  const { language, changeLanguage } = useLanguage()
-
+const LanguageToggle = ({ value, onChange }: Props) => {
   return (
-    <button
-      onClick={() => changeLanguage(language === 'en' ? 'bn' : 'en')}
-      className="relative w-14 h-7 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300"
-    >
-      <span className={`absolute left-1.5 top-1/2 -translate-y-1/2 text-xs font-medium ${language === 'en' ? 'text-white' : 'text-gray-500 dark:text-gray-400'}`}>
+    <div className="flex items-center rounded-full bg-gray-100 dark:bg-gray-800 p-1">
+      <button
+        onClick={() => onChange("en")}
+        className={`px-3 py-1.5 text-sm font-medium rounded-full transition
+          ${
+            value === "en"
+              ? "bg-white dark:bg-black text-[#006747] dark:text-[#00A86B] shadow"
+              : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+          }
+        `}
+      >
         EN
-      </span>
-      <span className={`absolute right-1.5 top-1/2 -translate-y-1/2 text-xs font-medium ${language === 'bn' ? 'text-white' : 'text-gray-500 dark:text-gray-400'}`}>
+      </button>
+
+      <button
+        onClick={() => onChange("bn")}
+        className={`px-3 py-1.5 text-sm font-medium rounded-full transition
+          ${
+            value === "bn"
+              ? "bg-white dark:bg-black text-[#006747] dark:text-[#00A86B] shadow"
+              : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+          }
+        `}
+      >
         BN
-      </span>
-      <div
-        className={`absolute top-0.5 w-6 h-6 rounded-full bg-primary shadow-md transform transition-transform duration-300 ${
-          language === 'en' ? 'translate-x-0.5' : 'translate-x-7'
-        }`}
-      />
-    </button>
+      </button>
+    </div>
   )
 }
 

@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ 
-  image = '/leader-image.jpg', 
+  image = '/images/leader-image.jpg', 
   name = 'Leader' 
 }) => {
   return (

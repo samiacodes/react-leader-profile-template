@@ -1,62 +1,16 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    /* Light Mode - Bangladesh Flag Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    
-    /* Green - #006747 */
-    --primary: 158 100% 20%;
-    --primary-foreground: 0 0% 100%;
-    
-    /* Red - #DA291C */
-    --secondary: 4 76% 48%;
-    --secondary-foreground: 0 0% 100%;
-    
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 158 100% 20%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 158 100% 20%;
-    --radius: 0.5rem;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
 
-  .dark {
-    /* Dark Mode - Adjusted Bangladesh Flag Colors */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    
-    /* Green - Brighter for dark mode */
-    --primary: 158 80% 35%;
-    --primary-foreground: 0 0% 100%;
-    
-    /* Red - Brighter for dark mode */
-    --secondary: 4 80% 58%;
-    --secondary-foreground: 0 0% 100%;
-    
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 158 80% 35%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 158 80% 35%;
-  }
+:root {
+  --green: #006747;
+  --red: #DA291C;
 }
 
+body {
+  @apply bg-white text-gray-900;
+}
 
+.dark body {
+  @apply bg-black text-gray-100;
+}
