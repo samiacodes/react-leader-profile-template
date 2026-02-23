@@ -7,6 +7,7 @@ import WorksPage from '@/pages/WorksPage'
 import GalleryPage from '@/pages/GalleryPage'
 import NewsPage from '@/pages/NewsPage'
 import ContactPage from '@/pages/ContactPage'
+import ReachOutPage from '@/pages/ReachOutPage' 
 import NotFound from '@/pages/NotFound'
 
 export const router = createBrowserRouter([
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: 'contact',
         element: <ContactPage />,
+      },
+      {
+        path: 'reach-out-to-your-mp',  
+        element: <ReachOutPage />,
       },
     ],
   }

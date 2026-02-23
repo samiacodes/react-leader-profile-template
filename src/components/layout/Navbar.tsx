@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react'
 import { useTheme } from '@/components/theme-provider'
 import LanguageToggle from '@/components/language-toggle'
 import ThemeToggle from '@/components/theme-toggle'
+import WriteToMPButton from '@/components/ui/WriteToMPButton'  
 import { useLanguage } from '@/hooks/useLanguage'
 import { menuItems } from '@/config/navbarConfig'
 import Logo from './Logo'
@@ -31,8 +32,8 @@ const Navbar = () => {
             <Logo />
           </div>
 
-          {/* Desktop Menu - মাঝখানে */}
-          <div className="hidden md:flex items-center justify-center flex-1 px-2">
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center justify-center flex-1 px-2">
             <div className="flex items-center gap-0.5 lg:gap-1">
               {menuItems.map((item) => (
                 <Link
@@ -50,7 +51,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right Section - ডানে */}
+          {/* Right Section */}
           <div className="flex items-center gap-1 md:gap-2 shrink-0">
             <LanguageToggle 
               value={language} 
@@ -59,14 +60,13 @@ const Navbar = () => {
             
             <ThemeToggle />
 
-            <button className="hidden sm:inline-block bg-[#006747] text-white px-3 py-1.5 rounded-full text-xs font-medium hover:bg-[#00523b] dark:bg-[#008055] dark:hover:bg-[#006747] transition-colors whitespace-nowrap">
-              {language === 'en' ? 'Write to MP' : 'এমপিকে লিখুন'}
-            </button>
+            {/* Desktop Button  */}
+            <WriteToMPButton className="hidden lg:inline-block" />
 
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="lg:hidden p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               {isMobileMenuOpen ? (
                 <X className="h-4 w-4 text-gray-700 dark:text-gray-300" />
@@ -79,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-3 border-t border-gray-200 dark:border-gray-800">
+          <div className="lg:hidden py-3 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-1">
               {menuItems.map((item) => (
                 <Link
@@ -96,10 +96,8 @@ const Navbar = () => {
                 </Link>
               ))}
               
-              {/* Mobile CTA */}
-              <button className="mt-3 bg-[#006747] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#00523b] dark:bg-[#008055] dark:hover:bg-[#006747] w-full">
-                {language === 'en' ? 'Write to Your MP' : 'আপনার এমপিকে লিখুন'}
-              </button>
+              {/* Mobile Button */}
+              <WriteToMPButton fullWidth className="mt-3" />
             </div>
           </div>
         )}
