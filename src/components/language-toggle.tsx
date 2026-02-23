@@ -31,7 +31,7 @@ const LanguageToggle = ({ value, onChange }: Props) => {
           }
         `}
       >
-        BN
+        বাং
       </button>
     </div>
   )
