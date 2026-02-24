@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
+// import Footer from '@/components/layout/Footer'
+// import CompactFooter from '@/components/layout/CompactFooter'
+import PyramidFooter from '@/components/layout/PyramidFooter'
 
 const RootLayout = () => {
   return (
@@ -9,7 +11,9 @@ const RootLayout = () => {
       <main className="flex-1">
         <Outlet />
       </main>
-      <Footer />
+      <PyramidFooter/>
+      {/* <CompactFooter/> */}
+      {/* <Footer /> */}
     </div>
   )
 }

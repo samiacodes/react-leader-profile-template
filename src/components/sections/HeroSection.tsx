@@ -9,7 +9,7 @@ const HeroSection = () => {
 
   return (
     <section className="bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black py-12 md:py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2 md:px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 
           {/* Left Content */}

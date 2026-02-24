@@ -10,7 +10,7 @@ const LanguageToggle = ({ value, onChange }: Props) => {
     <div className="flex items-center rounded-full bg-gray-100 dark:bg-gray-800 p-1">
       <button
         onClick={() => onChange("en")}
-        className={`px-3 py-1.5 text-sm font-medium rounded-full transition
+        className={`px-1 py-1 text-xs rounded-full transition
           ${
             value === "en"
               ? "bg-white dark:bg-black text-[#006747] dark:text-[#00A86B] shadow"
@@ -23,7 +23,7 @@ const LanguageToggle = ({ value, onChange }: Props) => {
 
       <button
         onClick={() => onChange("bn")}
-        className={`px-3 py-1.5 text-sm font-medium rounded-full transition
+        className={`px-1 py-1 text-xs rounded-full transition
           ${
             value === "bn"
               ? "bg-white dark:bg-black text-[#006747] dark:text-[#00A86B] shadow"

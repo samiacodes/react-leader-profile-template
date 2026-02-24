@@ -83,7 +83,7 @@ export const siteConfig = {
 
     // Social media links
     social: {
-      facebook: 'https://facebook.com/',
+      facebook: 'https://facebook.com/LamiyaEmii',
       twitter: 'https://twitter.com/',
       instagram: 'https://instagram.com/',
       youtube: 'https://youtube.com/',

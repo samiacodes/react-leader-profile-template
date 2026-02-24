@@ -13,7 +13,7 @@ const ThemeToggle = () => {
     <div className="flex items-center rounded-full bg-gray-100 dark:bg-gray-800 p-1">
       <button
         onClick={() => handleThemeChange("light")}
-        className={`p-2 rounded-full transition
+        className={`px-1 py-1 text-xs lg:text-sm rounded-full transition
           ${
             theme === "light"
               ? "bg-white dark:bg-black text-[#006747] dark:text-[#00A86B] shadow"
@@ -27,7 +27,7 @@ const ThemeToggle = () => {
 
       <button
         onClick={() => handleThemeChange("dark")}
-        className={`p-2 rounded-full transition
+        className={`px-1 py-1 text-xs lg:text-sm rounded-full transition
           ${
             theme === "dark"
               ? "bg-white dark:bg-black text-[#006747] dark:text-[#00A86B] shadow"
