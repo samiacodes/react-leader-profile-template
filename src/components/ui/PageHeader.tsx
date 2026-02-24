@@ -45,7 +45,7 @@ const PageHeader = ({
       )}
       
       {/* Background Pattern (always) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-br from-black/20 to-transparent" />
       
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         {/* Breadcrumb */}

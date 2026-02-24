@@ -52,8 +52,8 @@ const ContactPage = () => {
         breadcrumb={breadcrumb}
       />
 
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="w-full  py-12 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">
 
           {/* Left Column - Contact Info, Social & CTA */}
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
@@ -140,7 +140,7 @@ const ContactPage = () => {
             </div>
 
             {/* Write to MP CTA */}
-            <div className="mt-8 bg-gradient-to-r from-[#006747]/10 to-[#DA291C]/10 dark:from-[#00A86B]/20 dark:to-[#FF4D4D]/20 rounded-xl p-6">
+            <div className="mt-8 bg-linear-to-r from-[#006747]/10 to-[#DA291C]/10 dark:from-[#00A86B]/20 dark:to-[#FF4D4D]/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-[#006747] dark:text-[#00A86B] mb-2">
                 {language === 'en' ? 'Write to Your MP' : 'এমপিকে লিখুন'}
               </h3>
@@ -176,7 +176,7 @@ const ContactPage = () => {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="w-full h-[400px] rounded-xl overflow-hidden mb-4">
+            <div className="w-full h-100 rounded-xl overflow-hidden mb-4">
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9024424301397!2d${coordinates.lng}!3d${coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbff5908a!2sNarayanganj!5e0!3m2!1sen!2sbd!4v1645561234567!5m2!1sen!2sbd`}
                 width="100%"
