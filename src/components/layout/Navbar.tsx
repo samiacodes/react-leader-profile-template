@@ -38,8 +38,8 @@ const Navbar = () => {
                   key={item.key}
                   to={item.path}
                   className={`whitespace-nowrap px-2 lg:px-2.5 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-colors ${isActivePath(item.path)
-                      ? 'text-[#006747] dark:text-[#00A86B] bg-gray-100 dark:bg-gray-900'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-[#006747] dark:hover:text-[#00A86B] hover:bg-gray-50 dark:hover:bg-gray-900'
+                    ? 'text-[#006747] dark:text-[#00A86B] bg-gray-100 dark:bg-gray-900'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-[#006747] dark:hover:text-[#00A86B] hover:bg-gray-50 dark:hover:bg-gray-900'
                     }`}
                 >
                   {item.label[language]}
@@ -62,8 +62,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-0 md:gap-1 shrink-0">
             {/* Desktop Button */}
-            <WriteToMPButton className="hidden lg:inline-block ml-1" />
-
+            <WriteToMPButton className="hidden lg:inline-block px-2 py-1 text-xs" />
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
@@ -88,8 +87,8 @@ const Navbar = () => {
                   to={item.path}
                   onClick={toggleMobileMenu}
                   className={`px-3 py-2 rounded-full text-sm font-medium transition-colors ${isActivePath(item.path)
-                      ? 'text-[#006747] dark:text-[#00A86B] bg-gray-100 dark:bg-gray-900 '
-                      : 'text-gray-700 dark:text-gray-300 hover:text-[#006747] dark:hover:text-[#00A86B] hover:bg-gray-50 dark:hover:bg-gray-900'
+                    ? 'text-[#006747] dark:text-[#00A86B] bg-gray-100 dark:bg-gray-900 '
+                    : 'text-gray-700 dark:text-gray-300 hover:text-[#006747] dark:hover:text-[#00A86B] hover:bg-gray-50 dark:hover:bg-gray-900'
                     }`}
                 >
                   {item.label[language]}
