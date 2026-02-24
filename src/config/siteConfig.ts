@@ -90,6 +90,12 @@ export const siteConfig = {
       linkedin: 'https://linkedin.com/'
     },
 
+    // Office Hours
+    officeHours: {
+      en: "Sunday - Thursday: 9:00 AM - 5:00 PM",  
+      bn: "রবিবার - বৃহস্পতিবার: সকাল ৯:০০ - বিকাল ৫:০০"  
+    },
+
     // Copyright and developer
     copyright: {
       text: {

@@ -1,18 +1,34 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useLanguage } from '@/hooks/useLanguage'
+import PageHeader from '@/components/ui/PageHeader'
+import { pageContent } from '@/config/pageContent'
 
 const GalleryPage = () => {
-  const { t } = useTranslation()
-  
+  const { language } = useLanguage()
+  const content = pageContent.gallery[language]
+
+  const breadcrumb = [
+    { label: language === 'en' ? 'Home' : 'হোম', path: '/' },
+    { label: content.title, path: '/gallery' }
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black py-20">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-[#006747] dark:text-[#00A86B] text-center mb-8">
-          {t('gallery')}
-        </h1>
-        <p className="text-center text-gray-600 dark:text-gray-400">
-          Gallery page content coming soon...
-        </p>
+    <div className="min-h-screen bg-gray-50 dark:bg-black">
+      <PageHeader 
+        title={content.title}
+        description={content.description}
+        breadcrumb={breadcrumb}
+      />
+
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-4xl mx-auto">
+          {/* Gallery content will go here */}
+          <p className="text-center text-gray-600 dark:text-gray-400">
+            {language === 'en' 
+              ? 'Gallery coming soon...' 
+              : 'গ্যালারি খুব শীঘ্রই আসছে...'}
+          </p>
+        </div>
       </div>
     </div>
   )
