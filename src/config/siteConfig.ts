@@ -1,7 +1,22 @@
 export const siteConfig = {
-  // Leader Information for Hero section
+  // Basic Info
+  name: 'Leader Profile',
+  title: {
+    en: 'Political Leader Profile',
+    bn: 'রাজনৈতিক নেতার প্রোফাইল'
+  },
+  description: {
+    en: 'Official website of the political leader',
+    bn: 'রাজনৈতিক নেতার অফিসিয়াল ওয়েবসাইট'
+  },
+
+  // Leader Information 
   leader: {
     name: {
+      en: 'Samiya Islam Lamiya',
+      bn: 'সামিয়া ইসলাম লামিয়া'
+    },
+    nameFull: {
       en: 'Samiya Islam Lamiya',
       bn: 'সামিয়া ইসলাম লামিয়া'
     },
@@ -9,20 +24,60 @@ export const siteConfig = {
       en: 'Member of Parliament',
       bn: 'সংসদ সদস্য'
     },
+    formerDesignation: {
+      en: 'Former Member of Parliament',
+      bn: 'সাবেক সংসদ সদস্য'
+    },
     constituency: {
       en: 'Narayanganj-3',
       bn: 'নারায়ণগঞ্জ-৩'
+    },
+    constituencyNumber: {
+      en: '206, Narayanganj-3',
+      bn: '২০৬,নারায়ণগঞ্জ-৩'
     },
     imagePath: '/images/leader-image.jpg',
     tagline: {
       en: 'Let\'s build a new',
       bn: 'আসুন, একসাথে গড়ি নতুন'
-    }
+    },
+    
+    // Political Party
+    party: {
+      name: {
+        en: 'Bangladesh ',
+        bn: 'বাংলাদেশ '
+      },
+      shortName: {
+        en: 'BD',
+        bn: 'বাংলাদেশ'
+      }
+    },
+    
+    // Personal Details
+    personalInfo: {
+      birthDate: {
+        en: 'October 10, 2003',
+        bn: '১০ অক্টোবর, ২০০৩'
+      },
+      birthPlace: {
+        en: 'Bangladesh',
+        bn: 'বাংলাদেশ'
+      },
+      district: {
+        en: 'Narayanganj',
+        bn: 'নারায়ণগঞ্জ'
+      },
+      currentTerm: {
+        en: 'Third Term (2018-2026)',
+        bn: 'তৃতীয় বার (২০১৮-২০২৬)'
+      }
+    },
+
   },
 
   // Footer Information
   footer: {
-    // Logo/Tagline section
     brand: {
       logoText: 'Samiya Islam Lamiya',
       tagline: {
@@ -30,73 +85,40 @@ export const siteConfig = {
         bn: 'উত্তম আগামীর জন্য নেতৃত্ব'
       },
       description: {
-        en: 'Dedicated to serving the people of Narayanganj-3 with integrity and vision.',
-        bn: 'সততা ও দূরদৃষ্টির সাথে নারায়ণগঞ্জ-৩ এর জনগণের সেবায় নিবেদিত।'
+        en: 'Dedicated to serving the people with integrity and vision.',
+        bn: 'সততা ও দূরদৃষ্টির সাথে জনগণের সেবায় নিবেদিত।'
       }
     },
 
-    // Footer menu items (specific 4 items)
     menuItems: [
-      {
-        key: 'commitment',
-        path: '/commitment',
-        label: {
-          en: 'Commitment',
-          bn: 'অঙ্গীকার'
-        }
-      },
-      {
-        key: 'works',
-        path: '/works',
-        label: {
-          en: 'Notable Works',
-          bn: 'উল্লেখযোগ্য কাজ'
-        }
-      },
-      {
-        key: 'candidate',
-        path: '/candidate',
-        label: {
-          en: 'Candidate',
-          bn: 'প্রার্থী পরিচিতি'
-        }
-      },
-      {
-        key: 'contact',
-        path: '/contact',
-        label: {
-          en: 'Contact',
-          bn: 'যোগাযোগ'
-        }
-      }
+      { key: 'commitment', path: '/commitment', label: { en: 'Commitment', bn: 'অঙ্গীকার' } },
+      { key: 'works', path: '/works', label: { en: 'Notable Works', bn: 'উল্লেখযোগ্য কাজ' } },
+      { key: 'candidate', path: '/candidate', label: { en: 'Candidate', bn: 'প্রার্থী পরিচিতি' } },
+      { key: 'contact', path: '/contact', label: { en: 'Contact', bn: 'যোগাযোগ' } }
     ],
 
-    // Contact information
     contact: {
       email: 'samiyaislamlamia@gmail.com',
-      phone: '+880 1234 567890', 
+      phone: '+880 1234 567890',
       address: {
         en: 'Narayanganj, Bangladesh',
         bn: 'নারায়ণগঞ্জ, বাংলাদেশ'
       }
     },
 
-    // Social media links
+    officeHours: {
+      en: "Sunday - Thursday: 9:00 AM - 5:00 PM",
+      bn: "রবিবার - বৃহস্পতিবার: সকাল ৯:০০ - বিকাল ৫:০০"
+    },
+
     social: {
-      facebook: 'https://facebook.com/LamiyaEmii',
+      facebook: 'https://facebook.com/',
       twitter: 'https://twitter.com/',
       instagram: 'https://instagram.com/',
       youtube: 'https://youtube.com/',
       linkedin: 'https://linkedin.com/'
     },
 
-    // Office Hours
-    officeHours: {
-      en: "Sunday - Thursday: 9:00 AM - 5:00 PM",  
-      bn: "রবিবার - বৃহস্পতিবার: সকাল ৯:০০ - বিকাল ৫:০০"  
-    },
-
-    // Copyright and developer
     copyright: {
       text: {
         en: 'All rights reserved.',
@@ -113,7 +135,7 @@ export const siteConfig = {
     }
   },
 
-  // Navigation Menu (full menu for navbar)
+  // Navigation Menu
   menuItems: [
     { key: 'home', path: '/' },
     { key: 'candidate', path: '/candidate' },
