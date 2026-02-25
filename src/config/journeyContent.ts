@@ -38,7 +38,7 @@ export const getJourneyContent = (language: 'en' | 'bn') => {
       ]
     },
     bn: {
-      title: "বরিশাল-৬ এর মানুষের সাথে দীর্ঘ পথচলা",
+      title: "নারায়ণগঞ্জ-৩ এর মানুষের সাথে দীর্ঘ পথচলা",
       subtitle: "মাইলফলক ও অর্জন",
       
       timeline: [
