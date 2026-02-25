@@ -2,6 +2,7 @@ import React from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import PageHeader from '@/components/ui/PageHeader'
 import { pageContent } from '@/config/pageContent'
+import JourneyTimeline from '@/components/sections/JourneyTimeline'
 
 const CommitmentPage = () => {
   const { language } = useLanguage()
@@ -19,6 +20,7 @@ const CommitmentPage = () => {
         description={content.description}
         breadcrumb={breadcrumb}
       />
+      <JourneyTimeline />
 
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
