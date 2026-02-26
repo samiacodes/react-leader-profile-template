@@ -8,83 +8,69 @@ const HeroSection = () => {
   const { leader } = siteConfig
 
   return (
-    <section className="w-full relative bg-white dark:bg-black min-h-fit overflow-hidden">
-     
-      <div className="relative z-10 py-8">
-        <div className="flex flex-col items-center justify-center min-h-[80vh] relative">
-          
-          {/* Top Text - Tagline */}
-          <div className="text-center mb-8 md:mb-12 w-full max-w-4xl mx-auto">
-            <p className="text-primary font-medium text-2xl md:text-4xl lg:text-5xl tracking-wide leading-relaxed">
+    <section className="w-full relative bg-white dark:bg-black overflow-hidden">
+      <div className="relative z-10 py-4 md:py-6">
+        <div className="w-full max-w-7xl mx-auto px-4">
+
+          {/* Tagline */}
+          <div className="mb-2 md:mb-6">
+            <p className="text-primary font-medium text-2xl md:text-4xl lg:text-5xl leading-relaxed max-w-4xl">
               {leader.tagline[language]} {leader.constituency[language]}
             </p>
           </div>
 
-          {/* Mobile View (Stacked Layout) */}
-          <div className="block md:hidden w-full">
-            {/* Name */}
-            <div className="text-center mb-4">
-              <h1 className="text-3xl font-bold text-black dark:text-white">
-                {leader.name[language]}
-              </h1>
-            </div>
+          {/* ================= Mobile Layout ================= */}
+          <div className="md:hidden flex flex-col items-center text-center">
+            <h1 className="text-3xl font-bold text-black dark:text-white mb-2">
+              {leader.name[language]}
+            </h1>
 
-            {/* Designation */}
-            <div className="text-center mb-6">
-              <p className="text-xl text-black dark:text-white">
-                {leader.designation[language]} {leader.constituency[language]}
-              </p>
-            </div>
+            <p className="text-lg text-black dark:text-white mb-6">
+              {leader.designation[language]} {leader.constituency[language]}
+            </p>
 
-            {/* Image with Button */}
-            <div className="flex justify-center">
-              <div className="relative w-64 h-64">
-                <img
-                  src={leader.imagePath}
-                  alt={leader.name[language]}
-                  className="object-cover w-full h-full rounded-t-full shadow-2xl border-4 border-primary"
-                />
-                
-                {/* Button on Image */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 z-30 w-full max-w-40">
-                  <WriteToMPButton className="w-full shadow-lg text-sm" />
-                </div>
+            <div className="relative w-72 h-72">
+              <img
+                src={leader.imagePath}
+                alt={leader.name[language]}
+                className="w-full h-full object-cover rounded-t-full border-4 border-primary shadow-2xl"
+              />
+
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-full max-w-44">
+                <WriteToMPButton className="w-full text-sm shadow-lg" />
               </div>
             </div>
           </div>
 
-          {/* Desktop View - Three Column Layout */}
-          <div className="hidden md:grid md:grid-cols-3 md:gap-4 lg:gap-8 xl:gap-12 w-full max-w-6xl mx-auto items-center">
-            
-            {/* Left Column - Name */}
-            <div className="text-right">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-black dark:text-white">
+          {/* ================= Desktop Layout ================= */}
+          <div className="hidden md:grid grid-cols-2 gap-10 lg:gap-16 items-center min-h-[70vh]">
+
+            {/* Left: Text */}
+            <div className="flex flex-col gap-6">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white leading-tight">
                 {leader.name[language]}
               </h1>
-            </div>
 
-            {/* Center Column - Image */}
-            <div className="flex justify-center">
-              <div className="relative w-64 h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80">
-                <img
-                  src={leader.imagePath}
-                  alt={leader.name[language]}
-                  className="object-cover w-full h-full rounded-t-full shadow-2xl border-4 border-primary"
-                />
-                
-                {/* Button on Image */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 z-30 w-full max-w-40">
-                  <WriteToMPButton className="w-full shadow-lg text-sm" />
-                </div>
+              <p className="text-xl lg:text-2xl xl:text-3xl font-semibold text-secondary">
+                {leader.designation[language]} {leader.constituency[language]}
+              </p>
+
+              <div className="mt-4 max-w-52">
+                <WriteToMPButton className="w-full text-sm lg:text-base shadow-lg" />
               </div>
             </div>
 
-            {/* Right Column - Designation */}
-            <div className="text-left">
-              <p className="text-xl lg:text-2xl xl:text-3xl font-bold text-black dark:text-white">
-                {leader.designation[language]} {leader.constituency[language]}
-              </p>
+            {/* Right: Image */}
+            <div className="flex justify-end">
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96 xl:w-104 xl:h-104">
+                <img
+                  src={leader.imagePath}
+                  alt={leader.name[language]}
+                  className="w-full h-full object-cover rounded-t-full border-4 border-primary shadow-2xl"
+                />
+              </div>
             </div>
+
           </div>
         </div>
       </div>

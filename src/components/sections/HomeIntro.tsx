@@ -16,11 +16,11 @@ const HomeIntro = () => {
           
           {/* Section Header */}
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary bg-white rounded-full text-sm font-bold mb-4">
               {language === 'en' ? 'Meet Your Representative' : 'আপনার প্রতিনিধির সাথে পরিচিত হোন'}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
-              {language === 'en' ? 'Get to Know' : 'পিরিচিত হোন'} {leader.name[language]}
+              {language === 'en' ? 'Meet' : 'পরিচিত হোন'} {leader.name[language]}
             </h2>
           </div>
 
