@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { useTheme } from '@/components/theme-provider'
 import LanguageToggle from '@/components/language-toggle'
@@ -8,10 +7,11 @@ import WriteToMPButton from '@/components/ui/WriteToMPButton'
 import { useLanguage } from '@/hooks/useLanguage'
 import { menuItems } from '@/config/navbarConfig'
 import Logo from './Logo'
+import DesktopMenu from './DesktopMenu'
+import MobileMenu from './MobileMenu'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
   const { language, changeLanguage } = useLanguage()
   const { theme } = useTheme()
 
@@ -19,86 +19,75 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  const isActivePath = (path: string) => {
-    return location.pathname === path
-  }
-
   return (
-    <nav className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
-      <div className="container mx-auto px-2 md:px-0">
+    <nav className="bg-primary text-white sticky top-0 z-50 shadow-sm">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between h-14 md:h-16">
-          {/* Logo */}
-          <Logo />
 
-          {/* Desktop Menu  */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="flex items-center">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.key}
-                  to={item.path}
-                  className={`whitespace-nowrap px-2 lg:px-2.5 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-colors ${isActivePath(item.path)
-                    ? 'text-[#006747] dark:text-[#00A86B] bg-gray-100 dark:bg-gray-900'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-[#006747] dark:hover:text-[#00A86B] hover:bg-gray-50 dark:hover:bg-gray-900'
-                    }`}
-                >
-                  {item.label[language]}
-                </Link>
-              ))}
+          {/* Div 1: Logo - বামে */}
+          <div className="flex-1 flex justify-start">
+            <Logo />
+          </div>
+
+          {/* Div 2: Desktop Menu - মাঝে */}
+          <div className="hidden lg:block flex-1">
+            <div className="flex justify-center">
+              <DesktopMenu items={menuItems} language={language} />
             </div>
           </div>
 
-          {/* Right Section */}
-          <div className="flex items-center gap-0 md:gap-1 shrink-0">
-            {/* Toggle Button In Mobile */}
+          {/* Div 3: Toggle Buttons - মাঝে */}
+          <div className="hidden lg:block flex-1">
+            <div className="flex justify-center">
+              <div className="flex items-center gap-2">
+                <LanguageToggle value={language} onChange={changeLanguage} />
+              </div>
+            </div>
+          </div>
+          <div className="hidden lg:block flex-1">
+            <div className="flex justify-center">
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+              </div>
+            </div>
+          </div>
+
+          {/* Div 4: CTA Button - ডানে */}
+          <div className="flex-1 flex justify-end">
             <div className="flex items-center gap-2">
-              <LanguageToggle
-                value={language}
-                onChange={changeLanguage}
-              />
-              <ThemeToggle />
-            </div>
+              {/* Desktop CTA */}
+              <WriteToMPButton className="hidden lg:inline-block px-2 py-1 text-xs" />
 
+              {/* Mobile Menu Button (শুধু মোবাইলে দেখাবে) */}
+              <button
+                onClick={toggleMobileMenu}
+                className="lg:hidden p-1.5 rounded-full transition-colors hover:bg-secondary"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-4 w-4 text-white" />
+                ) : (
+                  <Menu className="h-4 w-4 text-white" />
+                )}
+              </button>
+            </div>
           </div>
-          <div className="flex items-center gap-0 md:gap-1 shrink-0">
-            {/* Desktop Button */}
-            <WriteToMPButton className="hidden lg:inline-block px-2 py-1 text-xs" />
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMobileMenu}
-              className="lg:hidden p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 ml-1"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-4 w-4 text-gray-700 dark:text-gray-300" />
-              ) : (
-                <Menu className="h-4 w-4 text-gray-700 dark:text-gray-300" />
-              )}
-            </button>
+        </div>
+
+        {/* Mobile View - Toggle Buttons  */}
+        <div className="lg:hidden flex justify-end py-2">
+          <div className="flex items-center gap-2">
+            <LanguageToggle value={language} onChange={changeLanguage} />
+            <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-3 border-t border-gray-200 dark:border-gray-800">
-            <div className="flex flex-col space-y-1">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.key}
-                  to={item.path}
-                  onClick={toggleMobileMenu}
-                  className={`px-3 py-2 rounded-full text-sm font-medium transition-colors ${isActivePath(item.path)
-                    ? 'text-[#006747] dark:text-[#00A86B] bg-gray-100 dark:bg-gray-900 '
-                    : 'text-gray-700 dark:text-gray-300 hover:text-[#006747] dark:hover:text-[#00A86B] hover:bg-gray-50 dark:hover:bg-gray-900'
-                    }`}
-                >
-                  {item.label[language]}
-                </Link>
-              ))}
-
-              {/* Mobile Button */}
-              <WriteToMPButton fullWidth className="mt-3" />
-            </div>
-          </div>
+          <MobileMenu
+            items={menuItems}
+            language={language}
+            onClose={() => setIsMobileMenuOpen(false)}
+          />
         )}
       </div>
     </nav>

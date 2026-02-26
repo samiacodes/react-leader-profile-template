@@ -27,13 +27,11 @@ const WriteToMPButton: React.FC<WriteToMPButtonProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       className={`
         group relative overflow-hidden
-        bg-[#006747] text-white 
+        bg-secondary text-white 
         px-6 py-3 rounded-full 
         text-sm font-medium 
         transition-all duration-300 ease-in-out
-        hover:bg-[#00523b] 
-        dark:bg-[#008055] 
-        dark:hover:bg-[#006747] 
+        hover:bg-secondary/80
         whitespace-nowrap
         transform hover:scale-105 active:scale-95
         shadow-md hover:shadow-xl

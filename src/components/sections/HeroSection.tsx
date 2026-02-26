@@ -8,14 +8,14 @@ const HeroSection = () => {
   const { leader } = siteConfig
 
   return (
-    <section className="w-full relative bg-linear-to-b from-red-100 to-green-200 dark:from-gray-900 dark:to-black min-h-fit overflow-hidden">
+    <section className="w-full relative bg-white dark:bg-black min-h-fit overflow-hidden">
      
       <div className="relative z-10 py-8">
         <div className="flex flex-col items-center justify-center min-h-[80vh] relative">
           
           {/* Top Text - Tagline */}
           <div className="text-center mb-8 md:mb-12 w-full max-w-4xl mx-auto">
-            <p className="text-[#006747] dark:text-[#00A86B] font-medium text-2xl md:text-4xl lg:text-5xl tracking-wide leading-relaxed">
+            <p className="text-primary font-medium text-2xl md:text-4xl lg:text-5xl tracking-wide leading-relaxed">
               {leader.tagline[language]} {leader.constituency[language]}
             </p>
           </div>
@@ -42,7 +42,7 @@ const HeroSection = () => {
                 <img
                   src={leader.imagePath}
                   alt={leader.name[language]}
-                  className="object-cover w-full h-full rounded-t-full shadow-2xl border-4 border-[#006747] dark:border-[#00A86B]"
+                  className="object-cover w-full h-full rounded-t-full shadow-2xl border-4 border-primary"
                 />
                 
                 {/* Button on Image */}
@@ -69,7 +69,7 @@ const HeroSection = () => {
                 <img
                   src={leader.imagePath}
                   alt={leader.name[language]}
-                  className="object-cover w-full h-full rounded-t-full shadow-2xl border-4 border-[#006747] dark:border-[#00A86B]"
+                  className="object-cover w-full h-full rounded-t-full shadow-2xl border-4 border-primary"
                 />
                 
                 {/* Button on Image */}

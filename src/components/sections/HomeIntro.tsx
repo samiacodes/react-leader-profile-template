@@ -10,16 +10,16 @@ const HomeIntro = () => {
   const { leader } = siteConfig
 
   return (
-    <section className="py-16 md:py-24 bg-linear-to-b from-white to-gray-50 dark:from-gray-900 dark:to-black">
+    <section className="py-16 md:py-24 bg-white dark:bg-black">
       <div className="w-full mx-auto ">
         <div className="w-full mx-auto">
           
           {/* Section Header */}
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-[#006747]/10 dark:bg-[#00A86B]/20 text-[#006747] dark:text-[#00A86B] rounded-full text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
               {language === 'en' ? 'Meet Your Representative' : 'আপনার প্রতিনিধির সাথে পরিচিত হোন'}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
               {language === 'en' ? 'Get to Know' : 'পিরিচিত হোন'} {leader.name[language]}
             </h2>
           </div>
@@ -29,7 +29,7 @@ const HomeIntro = () => {
             
             {/* Image Column */}
             <div className="md:col-span-2 flex justify-center">
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-[#006747] dark:border-[#00A86B] shadow-xl">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary shadow-xl">
                 <img
                   src={leader.imagePath}
                   alt={leader.name[language]}
@@ -40,7 +40,7 @@ const HomeIntro = () => {
 
             {/* Text Column */}
             <div className="md:col-span-3">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              <p className="text-lg text-black dark:text-white leading-relaxed mb-6">
                 {content.description}
               </p>
               

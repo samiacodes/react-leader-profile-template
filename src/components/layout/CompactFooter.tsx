@@ -19,7 +19,7 @@ const CompactFooter = () => {
   }
 
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+    <footer className="bg-primary text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         
         {/* Top Section - Logo & Social */}
@@ -39,7 +39,7 @@ const CompactFooter = () => {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-800 p-3 rounded-full hover:bg-[#00A86B] transition-colors"
+                  className="bg-white/10 p-3 rounded-full hover:bg-secondary transition-colors"
                   aria-label={platform}
                 >
                   <Icon className="h-5 w-5" />
@@ -51,10 +51,10 @@ const CompactFooter = () => {
 
         {/* Tagline & Description */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <p className="text-lg font-semibold text-[#00A86B] mb-2">
+          <p className="text-lg font-semibold text-secondary mb-2">
             {footer.brand.tagline[language]}
           </p>
-          <p className="text-gray-400 text-sm leading-relaxed">
+          <p className="text-white/80 text-sm leading-relaxed">
             {footer.brand.description[language]}
           </p>
         </div>
@@ -64,7 +64,7 @@ const CompactFooter = () => {
           
           {/* Quick Links */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold mb-4 text-[#00A86B] border-b border-gray-800 pb-2 inline-block">
+            <h4 className="text-lg font-semibold mb-4 text-secondary border-b border-secondary/30 pb-2 inline-block">
               {language === 'en' ? 'Quick Links' : 'গুরুত্বপূর্ণ লিংক'}
             </h4>
             <ul className="space-y-2">
@@ -72,7 +72,7 @@ const CompactFooter = () => {
                 <li key={item.key}>
                   <Link
                     to={item.path}
-                    className="text-gray-400 hover:text-[#00A86B] transition-colors"
+                    className="text-white/80 hover:text-secondary transition-colors"
                   >
                     {item.label[language]}
                   </Link>
@@ -83,22 +83,22 @@ const CompactFooter = () => {
 
           {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold mb-4 text-[#00A86B] border-b border-gray-800 pb-2 inline-block">
+            <h4 className="text-lg font-semibold mb-4 text-secondary border-b border-secondary/30 pb-2 inline-block">
               {language === 'en' ? 'Contact' : 'যোগাযোগ'}
             </h4>
             <ul className="space-y-3">
-              <li className="flex items-center justify-center md:justify-start gap-3 text-gray-400">
-                <Mail className="h-5 w-5 text-[#00A86B] shrink-0" />
+              <li className="flex items-center justify-center md:justify-start gap-3 text-white/80">
+                <Mail className="h-5 w-5 text-secondary shrink-0" />
                 <span>{footer.contact.email}</span>
               </li>
               {footer.contact.phone && (
-                <li className="flex items-center justify-center md:justify-start gap-3 text-gray-400">
-                  <Phone className="h-5 w-5 text-[#00A86B] shrink-0" />
+                <li className="flex items-center justify-center md:justify-start gap-3 text-white/80">
+                  <Phone className="h-5 w-5 text-secondary shrink-0" />
                   <span>{footer.contact.phone}</span>
                 </li>
               )}
-              <li className="flex items-center justify-center md:justify-start gap-3 text-gray-400">
-                <MapPin className="h-5 w-5 text-[#00A86B] shrink-0" />
+              <li className="flex items-center justify-center md:justify-start gap-3 text-white/80">
+                <MapPin className="h-5 w-5 text-secondary shrink-0" />
                 <span>{footer.contact.address[language]}</span>
               </li>
             </ul>
@@ -106,8 +106,8 @@ const CompactFooter = () => {
         </div>
 
         {/* Bottom Bar - Copyright & Developer */}
-        <div className="border-t border-gray-800 pt-6 mt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+        <div className="border-t border-secondary/30 pt-6 mt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
             <p>
               © {new Date().getFullYear()} {footer.brand.logoText}. {footer.copyright.text[language]}
             </p>
@@ -117,7 +117,7 @@ const CompactFooter = () => {
                 href={footer.copyright.developer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#00A86B] hover:underline"
+                className="text-secondary hover:underline"
               >
                 {footer.copyright.developer.name}
               </a>

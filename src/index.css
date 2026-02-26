@@ -2,15 +2,33 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --green: #006747;
-  --red: #DA291C;
+@theme {
+  --color-primary: #00522e;
+  --color-secondary: #D21335;
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
-body {
-  @apply bg-white text-gray-900;
+@layer base {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .dark body {
+    @apply bg-black text-white;
+  }
 }
 
-.dark body {
-  @apply bg-black text-gray-100;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 bg-primary text-white border border-primary transition-colors hover:brightness-90;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 bg-secondary text-white border border-secondary transition-colors hover:brightness-90;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 border border-primary text-primary transition-colors hover:bg-secondary/10;
+  }
 }

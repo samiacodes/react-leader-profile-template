@@ -2,7 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { siteConfig } from '@/config/siteConfig'
-import { Facebook, Twitter, Instagram, Youtube, Linkedin, Mail, Phone } from 'lucide-react'
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Linkedin,
+  Mail,
+  Phone,
+} from 'lucide-react'
 import Logo from './Logo'
 
 const PyramidFooter = () => {
@@ -14,11 +22,11 @@ const PyramidFooter = () => {
     twitter: Twitter,
     instagram: Instagram,
     youtube: Youtube,
-    linkedin: Linkedin
+    linkedin: Linkedin,
   }
 
   return (
-    <footer className="bg-[#006747] text-white pt-12 pb-6">
+    <footer className="bg-primary text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
 
         {/* Logo */}
@@ -28,7 +36,7 @@ const PyramidFooter = () => {
 
         {/* Leader Name */}
         <div className="text-center mb-3">
-          <h2 className="text-xl md:text-xl font-bold text-white">
+          <h2 className="text-xl font-bold">
             {leader.name[language]}
           </h2>
         </div>
@@ -43,8 +51,14 @@ const PyramidFooter = () => {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 p-2.5 rounded-full hover:bg-[#DA291C] transition-colors"
                 aria-label={platform}
+                className="
+                  bg-white/10
+                  p-2.5
+                  rounded-full
+                  transition-colors
+                  hover:bg-secondary
+                "
               >
                 <Icon className="h-4 w-4 text-white" />
               </a>
@@ -54,7 +68,7 @@ const PyramidFooter = () => {
 
         {/* Tagline */}
         <div className="text-center max-w-2xl mx-auto mb-4">
-          <p className="text-base md:text-2xl text-[#DA291C] font-medium">
+          <p className="text-base md:text-2xl font-bold text-white">
             {footer.brand.tagline[language]}
           </p>
         </div>
@@ -68,11 +82,12 @@ const PyramidFooter = () => {
 
         {/* Links & Contact */}
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 mb-8 border-t border-white/10 pt-6">
+
           {footer.menuItems.map((item) => (
             <Link
               key={item.key}
               to={item.path}
-              className="text-sm text-white/80 hover:text-white transition-colors"
+              className="text-sm text-white transition-colors hover:text-secondary"
             >
               {item.label[language]}
             </Link>
@@ -82,7 +97,7 @@ const PyramidFooter = () => {
 
           <a
             href={`mailto:${footer.contact.email}`}
-            className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1"
+            className="flex items-center gap-1 text-sm text-white transition-colors hover:text-secondary"
           >
             <Mail className="h-3.5 w-3.5" />
             {footer.contact.email}
@@ -93,7 +108,7 @@ const PyramidFooter = () => {
               <span className="text-white/30 hidden sm:inline">|</span>
               <a
                 href={`tel:${footer.contact.phone}`}
-                className="text-sm text-white/80 hover:text-white transition-colors flex items-center gap-1"
+                className="flex items-center gap-1 text-sm text-white transition-colors hover:text-secondary"
               >
                 <Phone className="h-3.5 w-3.5" />
                 {footer.contact.phone}
@@ -106,15 +121,17 @@ const PyramidFooter = () => {
         <div className="border-t border-white/10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/70">
             <p>
-              © {new Date().getFullYear()} {footer.brand.logoText}. {footer.copyright.text[language]}
+              © {new Date().getFullYear()} {footer.brand.logoText}.{' '}
+              {footer.copyright.text[language]}
             </p>
+
             <p>
               {footer.copyright.developer.label[language]}{' '}
               <a
                 href={footer.copyright.developer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#DA291C] hover:underline"
+                className="text-white hover:underline"
               >
                 {footer.copyright.developer.name}
               </a>

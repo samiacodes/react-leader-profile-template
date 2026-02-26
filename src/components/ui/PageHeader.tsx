@@ -31,7 +31,7 @@ const PageHeader = ({
   )
 
   return (
-    <div className="relative bg-[#006747] dark:bg-[#00A86B] overflow-hidden">
+    <div className="relative bg-primary dark:bg-black overflow-hidden">
       {/* Background Image (if provided) */}
       {bgImage && (
         <div 

@@ -45,7 +45,7 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black">
+    <div className="min-h-screen bg-white dark:bg-black">
       <PageHeader
         title={content.title}
         description={content.description}
@@ -56,9 +56,9 @@ const ContactPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">
 
           {/* Left Column - Contact Info, Social & CTA */}
-          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
+          <div className="bg-white rounded-2xl shadow-xl p-8">
             {/* Header */}
-            <h2 className="text-2xl font-bold text-[#006747] dark:text-[#00A86B] mb-6">
+            <h2 className="text-2xl font-bold text-black mb-6">
               {language === 'en' ? 'Get in Touch' : 'যোগাযোগ করুন'}
             </h2>
 
@@ -66,12 +66,12 @@ const ContactPage = () => {
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-start gap-3">
-                <div className="bg-[#006747]/10 dark:bg-[#00A86B]/20 p-3 rounded-lg">
-                  <Mail className="h-5 w-5 text-[#006747] dark:text-[#00A86B]" />
+                <div className="p-3 rounded-lg border border-secondary/20">
+                  <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                  <a href={`mailto:${footer.contact.email}`} className="font-medium text-black dark:text-white hover:text-[#006747]">
+                  <p className="text-sm text-black">Email</p>
+                  <a href={`mailto:${footer.contact.email}`} className="font-medium text-black hover:text-secondary">
                     {footer.contact.email}
                   </a>
                 </div>
@@ -79,36 +79,36 @@ const ContactPage = () => {
 
               {/* Phone */}
               <div className="flex items-start gap-3">
-                <div className="bg-[#006747]/10 dark:bg-[#00A86B]/20 p-3 rounded-lg">
-                  <Phone className="h-5 w-5 text-[#006747] dark:text-[#00A86B]" />
+                <div className="p-3 rounded-lg border border-secondary/20">
+                  <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
-                  <p className="font-medium text-black dark:text-white">{footer.contact.phone || '+880 1234 567890'}</p>
+                  <p className="text-sm text-black">Phone</p>
+                  <p className="font-medium text-black">{footer.contact.phone || '+880 1234 567890'}</p>
                 </div>
               </div>
 
               {/* Address */}
               <div className="flex items-start gap-3">
-                <div className="bg-[#006747]/10 dark:bg-[#00A86B]/20 p-3 rounded-lg">
-                  <MapPin className="h-5 w-5 text-[#006747] dark:text-[#00A86B]" />
+                <div className="p-3 rounded-lg border border-secondary/20">
+                  <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Office</p>
-                  <p className="font-medium text-black dark:text-white">{footer.contact.address[language]}</p>
+                  <p className="text-sm text-black">Office</p>
+                  <p className="font-medium text-black">{footer.contact.address[language]}</p>
                 </div>
               </div>
 
               {/* Office Hours - সরাসরি স্ট্রিং দেখাচ্ছি */}
               <div className="flex items-start gap-3">
-                <div className="bg-[#006747]/10 dark:bg-[#00A86B]/20 p-3 rounded-lg">
-                  <Clock className="h-5 w-5 text-[#006747] dark:text-[#00A86B]" />
+                <div className="p-3 rounded-lg border border-secondary/20">
+                  <Clock className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-sm text-black">
                     {language === 'en' ? 'Office Hours' : 'অফিস সময়'}
                   </p>
-                  <p className="font-medium text-black dark:text-white">
+                  <p className="font-medium text-black">
                     {officeHours}  {/* এখন স্ট্রিং, কাজ করবে */}
                   </p>
                 </div>
@@ -117,7 +117,7 @@ const ContactPage = () => {
 
             {/* Social Media */}
             <div className="mt-8">
-              <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
+              <h3 className="text-lg font-semibold text-black mb-4">
                 {language === 'en' ? 'Follow Us' : 'অনুসরণ করুন'}
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -129,10 +129,10 @@ const ContactPage = () => {
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full hover:bg-[#006747] dark:hover:bg-[#00A86B] group transition-all"
+                      className="bg-white p-3 rounded-full border border-secondary/20 hover:bg-secondary group transition-all"
                       aria-label={platform}
                     >
-                      <Icon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-white" />
+                      <Icon className="h-5 w-5 text-primary group-hover:text-white" />
                     </a>
                   ) : null
                 })}
@@ -140,11 +140,11 @@ const ContactPage = () => {
             </div>
 
             {/* Write to MP CTA */}
-            <div className="mt-8 bg-linear-to-r from-[#006747]/10 to-[#DA291C]/10 dark:from-[#00A86B]/20 dark:to-[#FF4D4D]/20 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-[#006747] dark:text-[#00A86B] mb-2">
+            <div className="mt-8 bg-white rounded-xl p-6 border border-secondary/20">
+              <h3 className="text-xl font-bold text-black mb-2">
                 {language === 'en' ? 'Write to Your MP' : 'এমপিকে লিখুন'}
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-black mb-4">
                 {language === 'en'
                   ? `Have a concern or suggestion? Directly message ${leader.name.en} and the team.`
                   : `কোনো সমস্যা বা পরামর্শ আছে? সরাসরি ${leader.name.bn} ও টিমকে বার্তা পাঠান।`}
@@ -154,8 +154,8 @@ const ContactPage = () => {
           </div>
 
           {/* Right Column - Location Map */}
-          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 h-fit sticky top-24">
-            <h2 className="text-2xl font-bold text-[#006747] dark:text-[#00A86B] mb-6">
+          <div className="bg-white rounded-2xl shadow-xl p-8 h-fit sticky top-24">
+            <h2 className="text-2xl font-bold text-black mb-6">
               {language === 'en' ? 'Our Location' : 'আমাদের অবস্থান'}
             </h2>
 
@@ -163,13 +163,13 @@ const ContactPage = () => {
             <div className="flex gap-2 mb-4">
               <button
                 onClick={() => {/* Google Maps সিলেক্ট */ }}
-                className="px-4 py-2 text-sm bg-[#006747] text-white rounded-lg"
+                className="btn-primary px-4 py-2 text-sm"
               >
                 Google Maps
               </button>
               <button
                 onClick={() => {/* OpenStreetMap সিলেক্ট */ }}
-                className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg"
+                className="px-4 py-2 text-sm bg-white text-black border border-secondary/20 rounded-lg hover:bg-secondary/10"
               >
                 OpenStreetMap
               </button>
@@ -192,8 +192,8 @@ const ContactPage = () => {
 
             {/* Address below map */}
             <div className="text-center">
-              <p className="text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2">
-                <MapPin className="h-4 w-4 text-[#006747]" />
+              <p className="text-black flex items-center justify-center gap-2">
+                <MapPin className="h-4 w-4 text-primary" />
                 {footer.contact.address[language]}
               </p>
             </div>

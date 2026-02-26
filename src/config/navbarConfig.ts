@@ -23,7 +23,49 @@ export const menuItems: MenuItem[] = [
     label: {
       en: 'Commitment',
       bn: 'অঙ্গীকার'
-    }
+    },
+    children: [
+      {
+        key: 'commitment1',
+        path: '/commitment/1',
+        label: {
+          en: 'Commitment 1',
+          bn: 'অঙ্গীকার ১'
+        }
+      },
+      {
+        key: 'commitment2',
+        path: '/commitment/2',
+        label: {
+          en: 'Commitment 2',
+          bn: 'অঙ্গীকার ২'
+        }
+      },
+      {
+        key: 'commitment3',
+        path: '/commitment/3',
+        label: {
+          en: 'Commitment 3',
+          bn: 'অঙ্গীকার ৩'
+        }
+      },
+      {
+        key: 'commitment4',
+        path: '/commitment/4',
+        label: {
+          en: 'Commitment 4',
+          bn: 'অঙ্গীকার ৪'
+        }
+      },
+      {
+        key: 'commitment5',
+        path: '/commitment/5',
+        label: {
+          en: 'Commitment 5',
+          bn: 'অঙ্গীকার ৫'
+        }
+      }
+    ]
   },
   {
     key: 'works',

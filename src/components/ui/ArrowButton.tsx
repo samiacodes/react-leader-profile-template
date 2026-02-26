@@ -14,7 +14,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ to, text, className = '' }) =
       to={to}
       className={`
         inline-flex items-center gap-2 
-        text-[#006747] dark:text-[#00A86B] 
+        text-primary dark:text-secondary 
         font-semibold 
         hover:gap-3 transition-all 
         group

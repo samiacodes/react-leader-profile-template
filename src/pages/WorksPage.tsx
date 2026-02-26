@@ -1,7 +1,10 @@
 import React from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import PageHeader from '@/components/ui/PageHeader'
+import WorkItem from '@/components/works/WorkItem'
+import CTACard from '@/components/ui/CTACard'
 import { pageContent } from '@/config/pageContent'
+import { worksContent } from '@/config/worksContent'
 
 const WorksPage = () => {
   const { language } = useLanguage()
@@ -13,7 +16,7 @@ const WorksPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black">
+    <div className="min-h-screen bg-white dark:bg-black">
       <PageHeader 
         title={content.title}
         description={content.description}
@@ -21,13 +24,19 @@ const WorksPage = () => {
       />
 
       <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          {/* Works content will go here */}
-          <p className="text-center text-gray-600 dark:text-gray-400">
-            {language === 'en' 
-              ? 'Notable works coming soon...' 
-              : 'উল্লেখযোগ্য কাজ খুব শীঘ্রই আসছে...'}
-          </p>
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Works Grid */}
+          <div className="space-y-16 md:space-y-24">
+            {worksContent.map((work, index) => (
+              <WorkItem key={work.id} work={work} index={index} />
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-20">
+            <CTACard />
+          </div>
         </div>
       </div>
     </div>

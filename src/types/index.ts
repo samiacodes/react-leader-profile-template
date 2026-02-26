@@ -26,4 +26,5 @@ export interface MenuItem {
     en: string
     bn: string
   }
+  children?: MenuItem[]
 }

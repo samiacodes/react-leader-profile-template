@@ -3,7 +3,6 @@ import { useLanguage } from '@/hooks/useLanguage'
 import PageHeader from '@/components/ui/PageHeader'
 import { pageContent } from '@/config/pageContent'
 import CandidateSection from '@/components/sections/CandidateSection'
-import JourneyTimeline from '@/components/sections/JourneyTimeline'
 
 const CandidatePage = () => {
   const { language } = useLanguage()
@@ -23,6 +22,8 @@ const CandidatePage = () => {
       />
 
       <CandidateSection/>
+      
+      
     </div>
   )
 }
