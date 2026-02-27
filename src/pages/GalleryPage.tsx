@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import PageHeader from '@/components/ui/PageHeader'
+import GalleryContainer from '@/components/gallery/GalleryContainer'
 import { pageContent } from '@/config/pageContent'
 
 const GalleryPage = () => {
@@ -13,23 +14,13 @@ const GalleryPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black">
+    <div className="min-h-screen bg-white dark:bg-black">
       <PageHeader 
         title={content.title}
         description={content.description}
         breadcrumb={breadcrumb}
       />
-
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          {/* Gallery content will go here */}
-          <p className="text-center text-gray-600 dark:text-gray-400">
-            {language === 'en' 
-              ? 'Gallery coming soon...' 
-              : 'গ্যালারি খুব শীঘ্রই আসছে...'}
-          </p>
-        </div>
-      </div>
+      <GalleryContainer />
     </div>
   )
 }

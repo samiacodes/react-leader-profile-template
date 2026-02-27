@@ -12,8 +12,11 @@ import WorksPage from '@/pages/WorksPage'
 import GalleryPage from '@/pages/GalleryPage'
 import NewsPage from '@/pages/NewsPage'
 import ContactPage from '@/pages/ContactPage'
-import ReachOutPage from '@/pages/ReachOutPage' 
+import ReachOutPage from '@/pages/ReachOutPage'
 import NotFound from '@/pages/NotFound'
+import GalleryPhotoPage from '@/pages/GalleryPhotoPage'
+import GalleryVideoPage from '@/pages/GalleryVideoPage'
+import GalleryAudioPage from '@/pages/GalleryAudioPage'
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +65,18 @@ export const router = createBrowserRouter([
         element: <GalleryPage />,
       },
       {
+        path: 'gallery/photo',
+        element: <GalleryPhotoPage />,
+      },
+      {
+        path: 'gallery/video',
+        element: <GalleryVideoPage />, 
+      },
+      {
+        path: 'gallery/audio',
+        element: <GalleryAudioPage />, 
+      },
+      {
         path: 'news',
         element: <NewsPage />,
       },
@@ -70,7 +85,7 @@ export const router = createBrowserRouter([
         element: <ContactPage />,
       },
       {
-        path: 'reach-out-to-your-mp',  
+        path: 'reach-out-to-your-mp',
         element: <ReachOutPage />,
       },
     ],

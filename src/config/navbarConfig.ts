@@ -81,7 +81,33 @@ export const menuItems: MenuItem[] = [
     label: {
       en: 'Gallery',
       bn: 'গ্যালারি'
-    }
+    },
+    children: [
+      {
+        key: 'gallery-photo',
+        path: '/gallery/photo',
+        label: {
+          en: 'Photos',
+          bn: 'ছবি'
+        }
+      },
+      {
+        key: 'gallery-video',
+        path: '/gallery/video',
+        label: {
+          en: 'Videos',
+          bn: 'ভিডিও'
+        }
+      },
+      {
+        key: 'gallery-audio',
+        path: '/gallery/audio',
+        label: {
+          en: 'Audio',
+          bn: 'অডিও'
+        }
+      }
+    ]
   },
   {
     key: 'news',

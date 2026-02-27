@@ -45,15 +45,7 @@ const MobileMenu = ({ items, language, onClose }: MobileMenuProps) => {
 
                 {openDropdowns.includes(item.key) && (
                   <div className="pl-4 mt-1 space-y-1 border-l-2 border-white/20 ml-3">
-                    <Link
-                      to={item.path}
-                      onClick={onClose}
-                      className={`block px-3 py-2 rounded-full text-sm transition-colors ${
-                        isActivePath(item.path) ? 'bg-secondary text-white' : 'text-white hover:bg-secondary/80'
-                      }`}
-                    >
-                      {language === 'en' ? 'All Commitments' : 'সব অঙ্গীকার'}
-                    </Link>
+                    {/* শুধুমাত্র children দেখাবে */}
                     {item.children.map(child => (
                       <Link
                         key={child.key}

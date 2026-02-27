@@ -46,15 +46,7 @@ const DesktopMenu = ({ items, language }: DesktopMenuProps) => {
 
               {openDropdown === item.key && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 lg:w-56 bg-primary text-white rounded-xl shadow-xl py-2 z-50">
-                  <Link
-                    to={item.path}
-                    className={`block px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base transition-colors ${
-                      isActivePath(item.path) ? 'bg-secondary text-white' : 'hover:bg-secondary/80'
-                    }`}
-                    style={{ wordBreak: 'keep-all' }}
-                  >
-                    {language === 'en' ? 'All Commitments' : 'সব অঙ্গীকার'}
-                  </Link>
+                  {/* শুধুমাত্র children দেখাবে, parent path দেখাবে না */}
                   {item.children.map(child => (
                     <Link
                       key={child.key}

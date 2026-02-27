@@ -26,8 +26,8 @@ const CommitmentDetailContent = ({ commitment }: CommitmentDetailContentProps) =
         breadcrumb={breadcrumb}
       />
 
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto py-12 md:py-20">
+        <div className="w-full mx-auto">
           
           {/* Image Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
