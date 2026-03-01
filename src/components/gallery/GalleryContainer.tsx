@@ -61,7 +61,7 @@ const GalleryContainer = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
-      <div className="container mx-auto  py-12 md:py-20">
+      <div className="container mx-auto py-12 md:py-20">
         
         <GalleryHeader 
           title={getTitle()}
@@ -71,7 +71,7 @@ const GalleryContainer = () => {
 
         <GalleryTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
-        {/* টাইপ কাস্ট করে পাঠান */}
+        {/* Type */}
         <GalleryGrid 
           items={items as any} 
           type={activeTab} 
