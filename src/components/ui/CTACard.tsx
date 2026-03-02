@@ -14,7 +14,7 @@ const CTACard: React.FC<CTACardProps> = ({ className = '' }) => {
     <div
       className={`
         bg-primary
-        rounded-2xl shadow-xl p-8 text-white
+        rounded-2xl shadow-xl p-8 mb-10 text-white
         ${className}
       `}
     >

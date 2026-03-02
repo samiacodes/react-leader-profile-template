@@ -10,12 +10,12 @@ const HomeIntro = () => {
   const { leader } = siteConfig
 
   return (
-    <section className="py-16 md:py-24 bg-white dark:bg-black">
+    <section className="py-8 md:py-12 bg-white dark:bg-black">
       <div className="w-full mx-auto ">
         <div className="w-full mx-auto">
           
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-4">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary bg-white rounded-full text-sm font-bold mb-4">
               {language === 'en' ? 'Meet Your Representative' : 'আপনার প্রতিনিধির সাথে পরিচিত হোন'}
             </span>
