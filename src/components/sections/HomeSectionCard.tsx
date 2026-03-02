@@ -30,7 +30,7 @@ const HomeSectionCard = ({ title, description, cta, path, image, icon, delay = 0
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
           
           {/* Icon Overlay (if icon exists) */}
           {icon && (
