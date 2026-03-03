@@ -38,7 +38,7 @@ const CandidateSection = () => {
       <div className="container mx-auto px-4 max-w-7xl">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary dark:bg-white rounded-full text-sm font-bold mb-4">
             {content.badge}
           </span>
@@ -50,35 +50,35 @@ const CandidateSection = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
 
           {/* Personal Info */}
           <div>
-            <h3 className="text-2xl font-bold text-center text-black dark:text-white mb-6">
+            <h3 className="text-2xl font-bold text-center text-black dark:text-white mb-2">
               {language === 'en' ? 'Personal Information' : 'ব্যক্তিগত তথ্য'}
             </h3>
 
-            <div className="flex flex-col lg:flex-row gap-4 items-stretch">
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
 
               {/* Image */}
-              <div className="w-full lg:w-1/2">
-                <div className="relative aspect-square h-full mx-auto lg:mx-0 rounded-2xl overflow-hidden border-4 border-primary shadow-xl">
+              <div className="w-auto lg:w-1/2 h-full">
+                <div className="relative aspect-square h-auto  mx-auto lg:mx-0 rounded-2xl overflow-hidden border-4 border-primary shadow-xl">
                   <img
                     src={leader.imagePath}
                     alt={leader.name[language]}
-                    className="w-full h-full object-cover"
+                    className="w-auto h-auto object-center"
                   />
                 </div>
               </div>
 
               {/* Details */}
               <div className="w-full lg:w-1/2">
-                <div className="h-full bg-white text-black rounded-2xl shadow-xl p-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full">
+                <div className="h-full bg-white text-black rounded-2xl shadow-xl p-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-auto py-4">
                     {content.personalDetails.map((detail, index) => (
                       <div
                         key={index}
-                        className="flex items-start gap-3 border-b border-secondary/20 pb-2"
+                        className="flex items-start gap-3 border-b border-secondary/20 pb-4"
                       >
                         <span className="text-primary shrink-0 mt-1">
                           {detailIcons[index % detailIcons.length]}

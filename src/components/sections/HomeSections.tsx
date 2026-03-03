@@ -72,7 +72,7 @@ const HomeSections = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
             {language === 'en' ? 'Discover' : 'আবিষ্কার করুন'} {leader.name[language]} {language === 'en' ? 'Work' : 'এর কাজ'}
           </h2>
-          <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         {/* Cards Grid */}

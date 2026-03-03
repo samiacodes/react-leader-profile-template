@@ -16,24 +16,27 @@ const DesktopMenu = ({ items, language }: DesktopMenuProps) => {
   const isActiveParent = (item: MenuItem) =>
     item.children ? item.children.some(child => location.pathname === child.path) : false
 
-  const getMenuClasses = (isActive: boolean) => {
+  // Scale padding and text size proportionally with screen
+  const getMenuItemClasses = (isActive: boolean, hasDropdown: boolean = false) => {
     const baseClasses = "flex items-center rounded-full transition-colors whitespace-nowrap"
-    const spacing = "px-2 md:px-2.5 lg:px-3 xl:px-4"
-    const padding = "py-1 md:py-1.5 lg:py-2"
-    const textSize = "text-xs md:text-sm lg:text-base xl:text-lg" 
+    // Padding scales with screen - more at larger screens
+    const padding = "px-2.5 xl:px-4 2xl:px-6 py-1.5 xl:py-0.8"
+    // Text size scales proportionally
+    const textSize = "text-sm xl:text-base 2xl:text-lg"
     const colors = isActive 
       ? 'bg-secondary text-white' 
       : 'text-white hover:bg-secondary/80'
+    const extraClasses = hasDropdown ? 'gap-1 xl:gap-0.9' : ''
     
-    return `${baseClasses} ${spacing} ${padding} ${textSize} ${colors}`
+    return `${baseClasses} ${padding} ${textSize} ${colors} ${extraClasses}`
   }
 
   return (
-    <div className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 xl:gap-2">
+    <div className="flex items-center space-x-0.5 xl:space-x-1 2xl:space-x-2">
       {items.map(item => (
         <div
           key={item.key}
-          className="relative flex-shrink-0"
+          className="relative"
           onMouseEnter={() => item.children && setOpenDropdown(item.key)}
           onMouseLeave={() => setOpenDropdown(null)}
         >
@@ -41,23 +44,26 @@ const DesktopMenu = ({ items, language }: DesktopMenuProps) => {
             <>
               <Link
                 to={item.path}
-                className={`${getMenuClasses(isActivePath(item.path) || isActiveParent(item) || openDropdown === item.key)} flex items-center gap-0.5 md:gap-1`}
+                className={getMenuItemClasses(
+                  isActivePath(item.path) || isActiveParent(item) || openDropdown === item.key,
+                  true
+                )}
               >
                 <span>{item.label[language]}</span>
                 <ChevronDown
-                  className={`h-3 w-3 md:h-3.5 md:w-3.5 lg:h-4 lg:w-4 transition-transform duration-200 ${
+                  className={`h-3.5 w-3.5 xl:h-4 xl:w-4 transition-transform duration-200 ${
                     openDropdown === item.key ? 'rotate-180' : ''
                   }`}
                 />
               </Link>
 
               {openDropdown === item.key && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-40 md:w-44 lg:w-48 xl:w-52 bg-primary text-white rounded-xl shadow-xl py-1 md:py-2 z-50">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 xl:w-48 2xl:w-56 bg-primary text-white rounded-xl shadow-xl py-2 z-50">
                   {item.children.map(child => (
                     <Link
                       key={child.key}
                       to={child.path}
-                      className={`block px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm lg:text-base transition-colors ${
+                      className={`block px-4 py-2 text-sm xl:text-base 2xl:text-lg transition-colors ${
                         isActivePath(child.path) ? 'bg-secondary text-white' : 'hover:bg-secondary/80'
                       }`}
                     >
@@ -70,7 +76,7 @@ const DesktopMenu = ({ items, language }: DesktopMenuProps) => {
           ) : (
             <Link
               to={item.path}
-              className={getMenuClasses(isActivePath(item.path))}
+              className={getMenuItemClasses(isActivePath(item.path))}
             >
               {item.label[language]}
             </Link>

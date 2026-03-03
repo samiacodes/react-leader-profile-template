@@ -28,7 +28,7 @@ const WriteToMPButton: React.FC<WriteToMPButtonProps> = ({
       className={`
         group relative overflow-hidden
         bg-secondary text-white 
-        px-6 py-3 rounded-full 
+        px-3 py-2 2xl:px-6 2xl:py-3 rounded-full 
         text-sm font-medium 
         transition-all duration-300 ease-in-out
         hover:bg-secondary/80

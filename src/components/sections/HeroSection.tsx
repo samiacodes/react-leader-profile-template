@@ -10,18 +10,18 @@ const HeroSection = () => {
   return (
     <section className="w-full relative bg-white dark:bg-black overflow-hidden">
       <div className="relative z-10 py-4 md:py-6">
-        <div className="w-full max-w-7xl mx-auto px-4">
+        <div className="w-full container mx-auto px-4">
 
-          {/* Tagline */}
-          <div className="mb-2 md:mb-6">
-            <p className="text-primary font-medium text-2xl md:text-4xl lg:text-5xl leading-relaxed max-w-4xl">
-              {leader.tagline[language]} {leader.constituency[language]}
-            </p>
-          </div>
 
           {/* ================= Mobile Layout ================= */}
           <div className="md:hidden flex flex-col items-center text-center">
-            <h1 className="text-3xl font-bold text-black dark:text-white mb-2">
+            {/* Tagline */}
+              <div className="mb-2 md:mb-4">
+                <p className="text-primary font-medium text-2xl md:text-3xl lg:text-4xl">
+                  {leader.tagline[language]} {leader.constituency[language]}
+                </p>
+              </div>
+            <h1 className="text-3xl font-bold text-black dark:text-white mb-4">
               {leader.name[language]}
             </h1>
 
@@ -36,17 +36,23 @@ const HeroSection = () => {
                 className="w-full h-full object-cover rounded-t-full border-4 border-primary shadow-2xl"
               />
 
-              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-full max-w-44">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-full max-w-44">
                 <WriteToMPButton className="w-full text-sm shadow-lg" />
               </div>
             </div>
           </div>
 
           {/* ================= Desktop Layout ================= */}
-          <div className="hidden md:grid grid-cols-2 gap-10 lg:gap-16 items-center min-h-[70vh]">
+          <div className="hidden md:grid grid-cols-5 gap-6 lg:gap-0 items-center min-h-[70vh]">
 
             {/* Left: Text */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 col-span-3">
+              {/* Tagline */}
+              <div className="mb-2 md:mb-4">
+                <p className="text-primary font-medium text-2xl md:text-3xl lg:text-3xl">
+                  {leader.tagline[language]} {leader.constituency[language]}
+                </p>
+              </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white leading-tight">
                 {leader.name[language]}
               </h1>
@@ -61,7 +67,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right: Image */}
-            <div className="flex justify-end">
+            <div className="flex justify-end col-span-2">
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 xl:w-104 xl:h-104">
                 <img
                   src={leader.imagePath}

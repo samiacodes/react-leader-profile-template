@@ -24,7 +24,7 @@ const HomeCommitment = () => {
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             {content.description}
           </p>
-          <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto mt-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Commitment Grid */}

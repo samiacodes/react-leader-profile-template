@@ -19,29 +19,29 @@ const Navbar = () => {
 
   return (
     <nav className="bg-primary text-white sticky top-0 z-50 shadow-sm">
-      {/* Main layout wrapper - matches page content width */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Navbar container - fixed height */}
-        <div className="flex items-center h-14 lg:h-16">
+      <div className="container mx-auto">
+        {/* Flex container with consistent gap that scales */}
+        <div className="flex items-center h-14 lg:h-16 gap-2 xl:gap-2 2xl:gap-4">
           
-          {/* Logo - no extra spacing */}
-          <div className="flex-shrink-0">
-            <Logo />
-          </div>
+          {/* Logo */}
+          <Logo />
 
-          {/* Desktop Menu - ml-auto pushes it right after logo */}
-          <div className="hidden lg:block ml-4 xl:ml-6">
+          {/* Desktop Menu */}
+          <div className="hidden lg:block">
             <DesktopMenu items={menuItems} language={language} />
           </div>
 
-          {/* Right Section - ml-auto pushes to far right */}
-          <div className="hidden lg:flex items-center ml-auto space-x-3 xl:space-x-4">
+          {/* Right Section – Toggles & CTA (always together) */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-3 ml-auto">
             <LanguageToggle value={language} onChange={changeLanguage} />
             <ThemeToggle />
             <WriteToMPButton />
           </div>
-
-          {/* Mobile Menu Button - visible only on mobile */}
+          <div className="flex lg:hidden items-center ml-auto gap-4">
+            <LanguageToggle value={language} onChange={changeLanguage} />
+            <ThemeToggle />
+          </div>
+          {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center ml-auto">
             <button
               onClick={toggleMobileMenu}

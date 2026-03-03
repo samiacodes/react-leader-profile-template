@@ -47,10 +47,10 @@ const PageHeader = ({
       {/* Background Pattern (always) */}
       <div className="absolute inset-0 bg-linear-to-br from-black/20 to-transparent" />
       
-      <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
+      <div className="container mx-auto px-4 py-8 md:py-10 relative z-10">
         {/* Breadcrumb */}
         {breadcrumb && breadcrumb.length > 0 && (
-          <div className="flex items-center gap-2 text-sm text-white/80 mb-4">
+          <div className="flex items-center gap-2 text-sm text-white/80 mb-2">
             {breadcrumb.map((item, index) => (
               <React.Fragment key={item.path}>
                 {index > 0 && <span className="text-white/60">/</span>}

@@ -99,14 +99,6 @@ export const menuItems: MenuItem[] = [
           bn: 'ভিডিও'
         }
       },
-      {
-        key: 'gallery-audio',
-        path: '/gallery/audio',
-        label: {
-          en: 'Audio',
-          bn: 'অডিও'
-        }
-      }
     ]
   },
   {
